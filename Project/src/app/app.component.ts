@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Login';
+  title = 'Main';
+
+  constructor(private router: Router) { }
+
+  ngOnInit() {
+    // setTimeout(() => {
+    //   this.router.navigate(['login']);
+    // }, 5000);
+  }
+
 }

@@ -1,0 +1,15 @@
+<div class='row mt-4'>
+  <div class='col-10 offset-1'>
+    <div class='row p-4'>
+      <input type='text' class='col-6 offset-1' [(ngModel)]='searchTerm'>
+      <button class='btn btn-primary col-2' (click)='searchClick()'>Search</button>
+    </div>
+    <div class='row' *ngFor='let temp of _data'>
+      <div class='col-12'>
+        <div class='row border border-primary'>
+          <div class='col-12'>{{temp.joke}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
