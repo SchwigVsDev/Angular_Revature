@@ -1,0 +1,28 @@
+<div class='row mt-4'>
+  <div class='col-10 offset-1'>
+    <div class='row p-4'>
+      <input type='text' class='col-6 offset-1' [(ngModel)]='searchTerm' placeholder="search starship">
+      <button class='btn btn-primary col-2' (click)='searchClick()'>Search</button>
+    </div>
+    <div class='row' *ngFor='let temp of _data'>
+      <div class='card'>
+        <div class='card-header'>
+          <h5 class='col-12 card-title'>{{temp.name}}</h5>
+        </div>
+        <div class='card-body'>
+          <div class='col-12 card-text'>Model: {{temp.model}}</div>
+          <div class='col-12 card-text'>Class: {{temp.starship_class}}</div>
+          <div class='col-12 card-text'>Length: {{temp.length | number:'.0'}} (in meters)</div>
+          <div class='col-12 card-text'>Manu: {{temp.manufacturer}}</div>
+          <div *ngIf='!+temp.cost_in_credits' class='col-12 card-text'>Cost: {{temp.cost_in_credits}} credits</div>
+          <div *ngIf='+temp.cost_in_credits' class='col-12 card-text'>Cost:
+            {{temp.cost_in_credits | number:'.0'}}
+            credits</div>
+          <div class='col-12 card-text'>Hyperdrive Rating: {{temp.hyperdrive_rating}}</div>
+          <div class='col-12 card-text'>Speed: {{temp.MGLT}} Megalight per hr</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
